@@ -19,6 +19,21 @@ section {
     padding: 2rem 9%;
 }
 
+.btn {
+    display: inline-block;
+    margin-top: 1rem;
+    border-radius: 5rem;
+    background-color: red;
+    color: whitesmoke;
+    padding: .9rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.7rem;
+}
+
+.btn:hover {
+    background-color: rgb(197, 0, 0);
+}
+
 header {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -33,6 +48,7 @@ header {
 
 header .logo {
     font-size: 3rem;
+    color: white;
     font-weight: bolder;
 }
 
@@ -65,5 +81,113 @@ header .fa-bars {
     font-size: 3rem;
     color: white;
     border-radius: .5rem;
-    
+    padding: .5rem 1.5rem;
+    cursor: pointer;
+    border: .1rem solid white;
+    display: none;
 }
+
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(capa_inter.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.home .content {
+    max-width: 63rem;
+}
+
+.home .content h3 {
+    font-size: 5rem;
+    color: black;
+}
+
+.home .content p {
+    font-size: 3.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width: 991px) {
+
+    html {
+        font-size: 55%;
+}
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+
+    .home {
+        background-position: left;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+   header .fa-bars{
+        display: block;
+   } 
+
+   header .navbar{
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: red;
+        border-top: .1rem solid rgb(230, 230, 230);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0); /* Esconde o menu */ 
+   }
+
+   header #toggler:checked ~ .navbar{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); /* Mostra o menu */
+   }
+
+   header .navbar a{
+        margin: 1.5rem;
+        padding: 1.5rem;
+        background: rgb(219, 0, 0);
+        border-radius: 10px;
+        border: .1rem solid rgb(230, 230, 230);
+        display: block;
+   }
+
+   .home .content h3 {
+    font-size: 4rem;
+   }
+
+   .home .content p {
+    font-size: 2.5rem;
+   }
+
+}
+
+@media (max-width: 450px) {
+
+    html {
+        font-size: 45%;
+}
+}
+
+/* media queries ends*/
